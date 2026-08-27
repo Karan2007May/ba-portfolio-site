@@ -1,0 +1,34 @@
+[
+  {
+    "id": "product-discovery-call",
+    "title": "How to Run a Successful Product Discovery Call",
+    "date": "May 22, 2026",
+    "category": "Process",
+    "summary": "A product discovery call is not a feature wishlist collection session...",
+    "url": "blog/how-to-run-a-successful-product-discovery-call.html"
+  },
+  {
+    "id": "brd-vs-frd",
+    "title": "The Practical Difference: BRD vs FRD",
+    "date": "May 10, 2026",
+    "category": "Documentation",
+    "summary": "Understand the clear distinctions between Business Requirements and Functional Requirements.",
+    "url": "blog/the-practical-difference-brd-vs-frd.html"
+  },
+  {
+    "id": "user-stories",
+    "title": "Writing Bulletproof User Stories",
+    "date": "April 28, 2026",
+    "category": "Agile",
+    "summary": "How to write Gherkin syntax stories that engineers will actually love reading.",
+    "url": "blog/writing-bulletproof-user-stories--acceptance-criteria.html"
+  },
+  {
+    "id": "use-cases",
+    "title": "How use cases solve more than what it seems like they would?",
+    "date": "June 10, 2026",
+    "category": "Agile",
+    "summary": "I have seen that use cases are more than what they seem. They might seem like simple blocks of user flows but they reveal much more than that. Like all edge cases and alternative flows possible.",
+    "content": "### Why Use Cases Solve More Than What Meets the Eye\n\nUse cases might seem like simple blocks of user flows, but they reveal much more than basic navigation paths.\n\n### Key Benefits of Structured Use Cases:\n\n- **Edge Cases**: Uncovering rare system conditions and failure modes early in the scoping phase.\n- **Alternative Flows**: Mapping branching user decisions before engineering writes code.\n- **Boundary Conditions**: Defining strict inputs, authorization checks, and data validation rules."
+  }
+]

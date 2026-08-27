@@ -1,0 +1,218 @@
+[
+  {
+    "id": "doc-contract-1",
+    "type": "BRD",
+    "name": "Guardrails BRD",
+    "industry": "Legal",
+    "role": "Business Analyst",
+    "description": "Business requirements for the AI contract parser and human escalation workflow.",
+    "preview": "BUSINESS REQUIREMENTS DOCUMENT\nPROJECT: Contract Clause Risk Analyzer\n\n1. OVERVIEW\nAutomate first-pass contract reviews using LLMs with guardrails.\n\n2. REQUIREMENTS\n- Parse PDFs.\n- Identify risky clauses.\n- Route to attorneys."
+  },
+  {
+    "id": "doc-contract-2",
+    "type": "Diagram",
+    "name": "Workflow Diagram",
+    "industry": "Legal",
+    "role": "Business Analyst",
+    "description": "Process map detailing the escalation triggers and human-in-the-loop steps.",
+    "preview": "WORKFLOW DIAGRAM (TEXT REP)\n[Start] -> [Upload PDF] -> [LLM Parsing] -> (Risk > 0.8?) -> Yes -> [Escalate to Legal]\nNo -> [Auto-approve]"
+  },
+  {
+    "id": "doc-contract-3",
+    "type": "Matrix",
+    "name": "Escalation Matrix",
+    "industry": "Legal",
+    "role": "Business Analyst",
+    "description": "Matrix mapping risk scores to the appropriate human legal reviewer tiers.",
+    "preview": "ESCALATION MATRIX\nLevel 1: Risk < 0.3 -> Paralegal\nLevel 2: Risk 0.4-0.7 -> Associate Attorney\nLevel 3: Risk > 0.8 -> Senior Partner"
+  },
+  {
+    "id": "doc-patient-1",
+    "type": "BRD",
+    "name": "BRD",
+    "industry": "Healthcare",
+    "role": "Consultant",
+    "description": "Core requirements for implementing Salesforce Service Cloud for patient relationships.",
+    "preview": "BRD: Patient Relationship CRM\n\n1. GOAL\nUnify patient data across legacy systems into Salesforce Service Cloud.\n\n2. SCOPE\n- Case Management\n- Omni-channel routing\n- HIPAA compliance rules."
+  },
+  {
+    "id": "doc-patient-2",
+    "type": "UX",
+    "name": "Journey Maps",
+    "industry": "Healthcare",
+    "role": "Consultant",
+    "description": "Patient journey mapping from initial symptom inquiry to post-visit follow-up.",
+    "preview": "PATIENT JOURNEY MAP\nPhase 1: Awareness (Web search)\nPhase 2: Inquiry (Call center / Chatbot)\nPhase 3: Scheduling (Service Cloud)\nPhase 4: Visit (EMR)\nPhase 5: Follow-up (CRM Email)"
+  },
+  {
+    "id": "doc-patient-3",
+    "type": "SLA",
+    "name": "Service SLAs",
+    "industry": "Healthcare",
+    "role": "Consultant",
+    "description": "Service Level Agreements for omni-channel care team responses.",
+    "preview": "SERVICE LEVEL AGREEMENTS\n- Urgent Care Call: < 2 mins\n- Routine Web Inquiry: < 24 hrs\n- Post-Op Follow-up: < 48 hrs\nEscalation triggers configured in SFDC Entitlement processes."
+  },
+  {
+    "id": "doc-shopify-1",
+    "type": "API",
+    "name": "API Specs",
+    "industry": "E-commerce",
+    "role": "Business Analyst",
+    "description": "REST API specifications for syncing inventory between Shopify and the WMS.",
+    "preview": "API SPECIFICATIONS\nEndpoint: /api/v1/inventory/sync\nMethod: POST\nPayload:\n{ \\\"sku\\\": \\\"12345\\\", \\\"qty\\\": 50, \\\"warehouse_id\\\": \\\"W-01\\\" }\nResponse: 200 OK"
+  },
+  {
+    "id": "doc-shopify-2",
+    "type": "Matrix",
+    "name": "Error Matrix",
+    "industry": "E-commerce",
+    "role": "Business Analyst",
+    "description": "Error handling workflows and retry logic for API timeouts.",
+    "preview": "ERROR HANDLING MATRIX\nError 404: Log error, alert admin.\nError 429 (Rate Limit): Exponential backoff (retry at 1s, 2s, 4s).\nError 500: Fallback to dead-letter queue."
+  },
+  {
+    "id": "doc-shopify-3",
+    "type": "Diagram",
+    "name": "Data Flow Diagram",
+    "industry": "E-commerce",
+    "role": "Business Analyst",
+    "description": "System architecture and data flow diagram for the inventory sync.",
+    "preview": "DATA FLOW DIAGRAM (TEXT)\n[Shopify Webhook] -> [AWS API Gateway] -> [Lambda Middleware] -> [WMS DB]\nReverse sync runs every 5 minutes via cron job."
+  },
+  {
+    "id": "doc-gohighlevel-1",
+    "type": "Guide",
+    "name": "Setup Guide",
+    "industry": "Marketing",
+    "role": "Product Consultant",
+    "description": "Standard operating procedure for onboarding new marketing agency tenants.",
+    "preview": "SOP: MULTI-TENANT ONBOARDING\n1. Provision Sub-Account.\n2. Load Snapshot Template.\n3. Configure Twilio/Mailgun SMTP.\n4. Add Custom Domains.\n5. Invite User."
+  },
+  {
+    "id": "doc-gohighlevel-2",
+    "type": "Workflow",
+    "name": "Workflow Templates",
+    "industry": "Marketing",
+    "role": "Product Consultant",
+    "description": "Base workflow automation templates for lead nurturing and appointment booking.",
+    "preview": "WORKFLOW TEMPLATE: Lead Nurture\nTrigger: Form Submitted\nAction 1: Send SMS 'Thanks for reaching out!'\nAction 2: Wait 1 Day\nAction 3: Send Email Case Study\nCondition: Did they reply?"
+  },
+  {
+    "id": "doc-gohighlevel-3",
+    "type": "SOP",
+    "name": "Onboarding SOP",
+    "industry": "Marketing",
+    "role": "Product Consultant",
+    "description": "Checklist for client success managers to ensure rapid deployment.",
+    "preview": "ONBOARDING CHECKLIST\n[x] Discovery Call\n[ ] Asset Collection (Logos, Copy)\n[ ] Snapshot Deployment\n[ ] Testing Lead Forms\n[ ] Handover Training"
+  },
+  {
+    "id": "doc-construction-1",
+    "type": "Data",
+    "name": "Data Dictionary",
+    "industry": "Construction",
+    "role": "Business Analyst",
+    "description": "Data dictionary mapping field report inputs to payroll system fields.",
+    "preview": "DATA DICTIONARY\nSource Field: 'Worker_Hours' -> Target: 'Timesheet.Regular_Hours'\nSource Field: 'Site_Code' -> Target: 'Project_Cost_Center'\nSource Field: 'Weather_Delay' -> Target: 'Notes'"
+  },
+  {
+    "id": "doc-construction-2",
+    "type": "UAT",
+    "name": "UAT Plan",
+    "industry": "Construction",
+    "role": "Business Analyst",
+    "description": "User Acceptance Testing plan for site managers to validate automated payroll outputs.",
+    "preview": "UAT PLAN\nTest Case 1: Submit normal 8-hour shift. Validate payroll sync.\nTest Case 2: Submit 10-hour shift. Validate overtime triggers.\nTest Case 3: Submit incomplete form. Validate error handling."
+  },
+  {
+    "id": "doc-construction-3",
+    "type": "Process",
+    "name": "Process Map",
+    "industry": "Construction",
+    "role": "Business Analyst",
+    "description": "End-to-end process map from daily log submission to payroll generation.",
+    "preview": "PROCESS MAP\nSite Supervisor (Tablet) -> Submits Form -> n8n Webhook -> Parses Data -> Validates Hours -> Posts to Payroll API -> Notifies Finance"
+  },
+  {
+    "id": "doc-hotel-1",
+    "type": "KPI",
+    "name": "KPI Document",
+    "industry": "Hospitality",
+    "role": "Data Analyst",
+    "description": "Definition of key performance indicators for guest satisfaction and revenue.",
+    "preview": "KPI DEFINITIONS\n1. RevPAR (Revenue Per Available Room)\n2. NPS (Net Promoter Score)\n3. Average Response Time to Guest Request\n4. Upsell Conversion Rate"
+  },
+  {
+    "id": "doc-hotel-2",
+    "type": "Design",
+    "name": "Dashboard Mocks",
+    "industry": "Hospitality",
+    "role": "Data Analyst",
+    "description": "Wireframes and mockups for the Power BI dashboard visualizations.",
+    "preview": "DASHBOARD MOCKUPS (Description)\nTop Row: 4 KPI Cards (RevPAR, NPS, Occ%, ADR)\nMiddle Left: Line chart comparing NPS and RevPAR over time.\nMiddle Right: Heatmap of guest complaints by floor."
+  },
+  {
+    "id": "doc-hotel-3",
+    "type": "Data",
+    "name": "Data Model",
+    "industry": "Hospitality",
+    "role": "Data Analyst",
+    "description": "Star schema data model aggregating PMS data and survey feedback.",
+    "preview": "DATA MODEL\nFact Table: daily_metrics\nDim Tables: dim_date, dim_room_type, dim_survey_source\nRelationships: daily_metrics.date_id -> dim_date.id"
+  },
+  {
+    "id": "doc-sap-1",
+    "type": "Plan",
+    "name": "Migration Plan",
+    "industry": "Logistics",
+    "role": "Business Analyst",
+    "description": "Structured strategy for migrating inventory data from legacy SAP to cloud.",
+    "preview": "MIGRATION PLAN\nPhase 1: Data Profiling\nPhase 2: Cleansing & Deduplication\nPhase 3: Mock Migration 1 (10% data)\nPhase 4: UAT & Sign-off\nPhase 5: Go-Live Cutover (Weekend)"
+  },
+  {
+    "id": "doc-sap-2",
+    "type": "Mapping",
+    "name": "Data Maps",
+    "industry": "Logistics",
+    "role": "Business Analyst",
+    "description": "Field-level data mapping documentation between SAP and the new cloud schema.",
+    "preview": "DATA MAPPING\nSAP Field: MATNR (Material Number) -> Cloud Field: item_sku\nSAP Field: WERKS (Plant) -> Cloud Field: facility_code\nSAP Field: LABST (Valuated Stock) -> Cloud Field: on_hand_qty"
+  },
+  {
+    "id": "doc-sap-3",
+    "type": "Script",
+    "name": "Validation Scripts",
+    "industry": "Logistics",
+    "role": "Business Analyst",
+    "description": "SQL scripts used for post-migration data validation and reconciliation.",
+    "preview": "VALIDATION SQL\nSELECT COUNT(*) FROM legacy.inventory;\nSELECT COUNT(*) FROM cloud.inventory;\n-- Check for mismatches\nSELECT sku FROM legacy EXCEPT SELECT sku FROM cloud;"
+  },
+  {
+    "id": "doc-coworking-1",
+    "type": "SRS",
+    "name": "SRS",
+    "industry": "Real Estate",
+    "role": "Product Consultant",
+    "description": "Software Requirements Specification for the desk booking engine.",
+    "preview": "SOFTWARE REQUIREMENTS SPECIFICATION\n1. Desk Locking: A desk must be locked for 5 mins during checkout.\n2. Overbooking: System must reject overlapping reservations.\n3. Notifications: Send email on success."
+  },
+  {
+    "id": "doc-coworking-2",
+    "type": "Design",
+    "name": "Wireframes",
+    "industry": "Real Estate",
+    "role": "Product Consultant",
+    "description": "Low-fidelity wireframes for the user booking interface and admin dashboard.",
+    "preview": "WIREFRAMES (Description)\nUser View: Interactive floor plan map. Desks change color based on availability.\nAdmin View: Calendar grid showing all bookings and revenue."
+  },
+  {
+    "id": "doc-coworking-3",
+    "type": "API",
+    "name": "API Webhooks",
+    "industry": "Real Estate",
+    "role": "Product Consultant",
+    "description": "Stripe webhook flow designs for automated invoicing and billing.",
+    "preview": "WEBHOOK FLOWS\nEvent: invoice.payment_succeeded\nAction: Update booking status to 'CONFIRMED', generate access pin code.\nEvent: invoice.payment_failed\nAction: Cancel booking, release desk lock, email user."
+  }
+]
