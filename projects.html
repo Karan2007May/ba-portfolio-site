@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>!function(){var e=localStorage.getItem("portfolio-theme");if(e)document.documentElement.setAttribute("data-theme",e);else{document.documentElement.setAttribute("data-theme","dark");localStorage.setItem("portfolio-theme","dark")}}();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Solutions Directory | Karan Gattani</title>
+  <meta name="description" content="Explore Karan Gattani's Business Analyst projects, filtered by SaaS, CRM, AI Automation, and industry verticals.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <canvas id="canvas-bubbles"></canvas>
+  
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+      <span class="nav-brand-title">BA & Product Consultant</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="index.html">Home</a></li>
+      <li class="nav-link-item active"><a href="projects.html">Solutions</a></li>
+      <li class="nav-link-item"><a href="documents.html">Resources</a></li>
+      <li class="nav-link-item"><a href="resume.html">Resume</a></li>
+      <li class="nav-link-item"><a href="blog.html">Blog</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="global-search" placeholder="Search...">
+      </div>
+      <div class="theme-toggle">
+        <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Nav -->
+  <header class="mobile-nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+    </div>
+    <button class="menu-toggle-btn" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Solutions</a>
+    <a href="documents.html">Resources</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <div class="theme-toggle" style="margin-top: auto; padding: 12px; background-color: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+      <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <main class="main-content">
+      <div class="container">
+        
+        <!-- Projects Header -->
+        <section class="section-header" style="margin-bottom: 40px;">
+          <h1 class="section-title">Projects & Solutions Directory</h1>
+          <p class="section-description">Browse through digital products I've analyzed, documented, and delivered. Major projects feature comprehensive business case studies.</p>
+        </section>
+
+        <!-- Interactive Filters (styled as bubble clouds) -->
+        <section style="margin-bottom: 40px;">
+          <div class="filter-bar" id="category-filters">
+            <span style="font-weight: 700; font-size: 0.9rem; align-self: center; margin-right: 8px; color: var(--text-muted); text-transform: uppercase;">Category:</span>
+            <button class="filter-btn active" data-filter="all">All Solutions</button>
+            <button class="filter-btn" data-filter="AI Automation">AI Automation</button>
+            <button class="filter-btn" data-filter="Salesforce">Salesforce</button>
+            <button class="filter-btn" data-filter="Systems Integration">Systems Integration</button>
+            <button class="filter-btn" data-filter="CRM">CRM</button>
+            <button class="filter-btn" data-filter="Automation">Automation</button>
+            <button class="filter-btn" data-filter="Data Analytics">Data Analytics</button>
+            <button class="filter-btn" data-filter="Cloud Migration">Cloud Migration</button>
+            <button class="filter-btn" data-filter="SaaS">SaaS</button>
+          </div>
+
+          <div class="filter-bar" id="industry-filters" style="border-bottom: none; margin-top: -8px; margin-bottom: 0;">
+            <span style="font-weight: 700; font-size: 0.9rem; align-self: center; margin-right: 8px; color: var(--text-muted); text-transform: uppercase;">Industry:</span>
+            <button class="filter-btn active" data-filter="all">All Industries</button>
+            <button class="filter-btn" data-filter="Legal">Legal</button>
+            <button class="filter-btn" data-filter="Healthcare">Healthcare</button>
+            <button class="filter-btn" data-filter="E-commerce">E-commerce</button>
+            <button class="filter-btn" data-filter="Marketing">Marketing</button>
+            <button class="filter-btn" data-filter="Construction">Construction</button>
+            <button class="filter-btn" data-filter="Hospitality">Hospitality</button>
+            <button class="filter-btn" data-filter="Logistics">Logistics</button>
+            <button class="filter-btn" data-filter="Real Estate">Real Estate</button>
+          </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section style="margin-bottom: 60px;">
+          <div class="projects-container" id="projects-grid-container">
+            <!-- Rendered dynamically -->
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <span>© 2026 Karan Gattani. Business Analyst & Product Consultant.</span>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/karangattani/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/karangattani07" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:karangattani07@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/data-loader.js"></script>
+  <script src="js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const container = document.getElementById('projects-grid-container');
+      const ALL_PROJECTS = await DataLoader.getProjects() || [];
+      const categoryFilters = document.querySelectorAll('#category-filters .filter-btn');
+      const industryFilters = document.querySelectorAll('#industry-filters .filter-btn');
+      
+      let activeCategory = 'all';
+      let activeIndustry = 'all';
+
+      // Maps themes dynamically
+      function getThemeClass(category) {
+        if (category === 'AI') return 'card-accent';
+        if (category === 'SaaS') return 'card-info';
+        if (category === 'CRM') return 'card-success';
+        if (category === 'Automation') return 'card-primary';
+        return 'card-info';
+      }
+
+      function norm(str) {
+        return (str || '').toString().trim().toLowerCase();
+      }
+
+      function renderProjects() {
+        const filtered = ALL_PROJECTS.filter(p => {
+          const pCat = norm(p.category);
+          const pInd = norm(p.industry);
+          const aCat = norm(activeCategory);
+          const aInd = norm(activeIndustry);
+
+          const matchCat = aCat === 'all' || pCat === aCat || (aCat.includes('data') && pCat.includes('data'));
+          const matchInd = aInd === 'all' || pInd === aInd || (aInd.includes('customer') && pInd.includes('customer')) || (aInd.includes('crm') && (pInd.includes('crm') || pCat.includes('crm')));
+
+          return matchCat && matchInd;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 60px; color: var(--text-muted);">
+              <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 16px; color: var(--primary);"></i>
+              <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 12px;">No projects match your current filter selections.</p>
+              <button id="reset-filters-btn" class="btn btn-secondary" style="margin: 0 auto; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-undo"></i> Reset All Filters</button>
+            </div>
+          `;
+          document.getElementById('reset-filters-btn')?.addEventListener('click', () => {
+            activeCategory = 'all';
+            activeIndustry = 'all';
+            categoryFilters.forEach(b => b.classList.toggle('active', b.getAttribute('data-filter') === 'all'));
+            industryFilters.forEach(b => b.classList.toggle('active', b.getAttribute('data-filter') === 'all'));
+            renderProjects();
+          });
+          return;
+        }
+
+        container.innerHTML = filtered.map(p => {
+          const metricsHTML = Object.entries(p.metrics).map(([label, val]) => `
+            <span class="badge badge-success" style="font-size: 0.75rem;"><i class="fas fa-bolt"></i> ${label}: ${val}</span>
+          `).join(' ');
+
+          const targetUrl = p.notionUrl || '#';
+          const actionLink = `href="${targetUrl}" target="_blank" rel="noopener noreferrer"`;
+          const actionLabel = 'View on Notion <i class="fas fa-external-link-alt"></i>';
+
+          return `
+            <div class="card ${getThemeClass(p.category)} project-card" style="display: flex; flex-direction: column; height: 480px; padding: 0; overflow: hidden;">
+              <div style="height: 190px; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); overflow: hidden; position: relative;">
+                <img src="${p.imageUrl}" alt="${p.title} Mockup" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 5px 12px; font-size: 0.72rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                  <i class="fas fa-industry" style="margin-right: 4px; color: var(--primary);"></i> ${p.industry} &nbsp;|&nbsp; <i class="fas fa-layer-group" style="margin-right: 4px; color: var(--accent);"></i> ${p.category}
+                </div>
+              </div>
+              <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div>
+                  <div class="project-meta">
+                    <span class="badge badge-primary">${p.industry}</span>
+                    <span class="badge">${p.duration}</span>
+                  </div>
+                  <h3 class="project-title" style="margin-bottom: 6px;">${p.title}</h3>
+                  <p class="project-excerpt" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">${p.subtitle}</p>
+                  <div style="margin-bottom: 16px;">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">${p.problem.slice(0, 100)}...</p>
+                  </div>
+                </div>
+
+                <div class="project-footer">
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    ${metricsHTML}
+                  </div>
+                  <a ${actionLink} class="project-action-btn" style="color: var(--primary); font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                    ${actionLabel}
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Filter Events
+      categoryFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          categoryFilters.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCategory = btn.getAttribute('data-filter');
+          renderProjects();
+        });
+      });
+
+      industryFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          industryFilters.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeIndustry = btn.getAttribute('data-filter');
+          renderProjects();
+        });
+      });
+
+      renderProjects();
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+.git
+.vscode
+scratch/
+update_data.js
+update_data.py
+*.py

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>!function(){var e=localStorage.getItem("portfolio-theme");if(e)document.documentElement.setAttribute("data-theme",e);else{document.documentElement.setAttribute("data-theme","dark");localStorage.setItem("portfolio-theme","dark")}}();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Karan Gattani</title>
+  <meta name="description" content="The requested page could not be found on Karan Gattani's BA & Product Portfolio.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+      <span class="nav-brand-title">BA & Product Consultant</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="index.html">Home</a></li>
+      <li class="nav-link-item"><a href="projects.html">Solutions</a></li>
+      <li class="nav-link-item"><a href="documents.html">Resources</a></li>
+      <li class="nav-link-item"><a href="resume.html">Resume</a></li>
+      <li class="nav-link-item"><a href="blog.html">Blog</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="global-search" placeholder="Search...">
+      </div>
+      <div class="theme-toggle">
+        <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Nav -->
+  <header class="mobile-nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+    </div>
+    <button class="menu-toggle-btn" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Solutions</a>
+    <a href="documents.html">Resources</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <div class="theme-toggle" style="margin-top: auto; padding: 12px; background-color: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+      <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <main class="main-content" style="display: flex; align-items: center; justify-content: center; min-height: 75vh; padding: 40px 20px;">
+      <div class="container" style="max-width: 650px; text-align: center;">
+        
+        <div class="card" style="padding: 48px 32px; border-radius: 16px; backdrop-filter: blur(16px); background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
+          <div style="font-size: 4.5rem; color: var(--primary); margin-bottom: 16px; animation: pulse 2s infinite ease-in-out;">
+            <i class="fas fa-compass"></i>
+          </div>
+          
+          <span class="badge badge-danger" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Error 404</span>
+          
+          <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; line-height: 1.2;">
+            Page Off-Boundary
+          </h1>
+          
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px;">
+            The page or specification requirement you are looking for has moved, been renamed, or does not exist.
+          </p>
+
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html" class="btn btn-primary" style="padding: 12px 24px;"><i class="fas fa-home"></i> Back to Home</a>
+            <a href="projects.html" class="btn btn-secondary" style="padding: 12px 24px;"><i class="fas fa-layer-group"></i> Browse Solutions</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <span>&copy; 2026 Karan Gattani. Business Analyst & Product Consultant.</span>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/karangattani/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/karangattani07" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:karangattani07@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/data-loader.js"></script>
+  <script src="js/shared.js"></script>
+</body>
+</html>

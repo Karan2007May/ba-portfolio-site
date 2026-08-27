@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>!function(){var e=localStorage.getItem("portfolio-theme");if(e)document.documentElement.setAttribute("data-theme",e);else{document.documentElement.setAttribute("data-theme","dark");localStorage.setItem("portfolio-theme","dark")}}();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources & BA Toolkit Library | Karan Gattani</title>
+  <meta name="description" content="Sanitized business requirements, templates, and specifications library authored by Karan Gattani.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+      <span class="nav-brand-title">BA & Product Consultant</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="index.html">Home</a></li>
+      <li class="nav-link-item"><a href="projects.html">Solutions</a></li>
+      <li class="nav-link-item active"><a href="documents.html">Resources</a></li>
+      <li class="nav-link-item"><a href="resume.html">Resume</a></li>
+      <li class="nav-link-item"><a href="blog.html">Blog</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="global-search" placeholder="Search...">
+      </div>
+      <div class="theme-toggle">
+        <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Nav -->
+  <header class="mobile-nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+    </div>
+    <button class="menu-toggle-btn" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Solutions</a>
+    <a href="documents.html" class="active">Resources</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <div class="theme-toggle" style="margin-top: auto; padding: 12px; background-color: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+      <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <main class="main-content">
+      <div class="container">
+        
+        <!-- Page Header -->
+        <section class="section-header" style="margin-bottom: 40px;">
+          <h1 class="section-title">Resources & BA Toolkit</h1>
+          <p class="section-description">A consolidated repository of sanitized project deliverables and reusable template guides designed to accelerate software requirements cycles.</p>
+        </section>
+
+        <!-- Section 1: Business Specifications Library -->
+        <section style="margin-bottom: 60px;">
+          <div style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-folder-open" style="color: var(--primary); font-size: 1.5rem;"></i>
+            <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0;">1. Sanitized Specifications Library</h2>
+          </div>
+          
+          <div class="docs-grid" id="docs-grid-container">
+            <!-- Populated dynamically -->
+          </div>
+        </section>
+
+        <!-- Section 2: Reusable BA Templates & Toolkits -->
+        <section style="margin-bottom: 60px;">
+          <div style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-tools" style="color: var(--info); font-size: 1.5rem;"></i>
+            <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0;">2. Reusable Templates & Checklists</h2>
+          </div>
+
+          <div class="docs-grid" id="toolkit-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Document Preview Modal -->
+    <div class="modal-overlay" id="doc-modal">
+      <div class="modal-container" style="max-width: 800px;">
+        <div class="modal-header">
+          <div>
+            <span class="badge badge-primary" id="modal-doc-type">BRD</span>
+            <h2 class="modal-title" id="modal-doc-title" style="font-size: 1.4rem; margin-top: 4px;">Document Preview</h2>
+          </div>
+          <button class="modal-close-btn" id="modal-doc-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body" style="padding: 24px;">
+          <div style="margin-bottom: 16px; font-size: 0.9rem; color: var(--text-secondary);" id="modal-doc-desc"></div>
+          <pre class="doc-preview-container" id="modal-doc-preview" style="max-height: 400px; font-family: monospace; white-space: pre-wrap; font-size: 0.85rem; padding: 20px; border-radius: 8px; border: 1px solid var(--border); background-color: var(--bg-primary); overflow-y: auto;"></pre>
+          <div style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 12px;">
+            <button class="btn btn-secondary" id="copy-doc-btn"><i class="fas fa-copy"></i> Copy Text</button>
+            <button class="btn btn-primary" onclick="alert('Downloading sanitized document PDF to your drive...')"><i class="fas fa-file-pdf"></i> Download PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <span>&copy; 2026 Karan Gattani. Business Analyst & Product Consultant.</span>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/karangattani/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/karangattani07" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:karangattani07@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/data-loader.js"></script>
+  <script src="js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. Render Documents
+      const DOCS_DATA = await DataLoader.getDocuments() || [];
+      const docsContainer = document.getElementById('docs-grid-container');
+      const modal = document.getElementById('doc-modal');
+      const closeBtn = document.getElementById('modal-doc-close');
+      const copyBtn = document.getElementById('copy-doc-btn');
+      
+      const modalTitle = document.getElementById('modal-doc-title');
+      const modalType = document.getElementById('modal-doc-type');
+      const modalDesc = document.getElementById('modal-doc-desc');
+      const modalPreview = document.getElementById('modal-doc-preview');
+
+      if (docsContainer) {
+        docsContainer.innerHTML = '';
+        
+        if (DOCS_DATA.length === 0) {
+          docsContainer.innerHTML = '<p style="color: var(--text-muted);">No documents found.</p>';
+        } else {
+          docsContainer.innerHTML = DOCS_DATA.map(doc => `
+          <div class="card doc-card tilt-card" style="cursor: pointer; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between;">
+            <a href="documents/document.html?id=${doc.id}" style="text-decoration: none; color: inherit; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="tilt-card-inner">
+                <span style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">${doc.type}</span>
+                <h3 style="margin-top: 4px; font-size: 1.15rem; color: var(--text-primary);">${doc.name}</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-top: 6px;">
+                  ${doc.description.slice(0, 80)}...
+                </p>
+              </div>
+              <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 10px;">
+                <span class="badge badge-primary">${doc.industry}</span>
+                <span style="color: var(--primary); font-size: 0.85rem; font-weight: 600;">View Spec <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+        `).join('');
+        }
+
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('open');
+        });
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('open');
+          }
+        });
+
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(modalPreview.innerText)
+            .then(() => {
+              const originalHTML = copyBtn.innerHTML;
+              copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+              setTimeout(() => {
+                copyBtn.innerHTML = originalHTML;
+              }, 2000);
+            });
+        });
+      }
+
+      // 2. Render Toolkit templates
+      const templates = [
+        { title: "Project Charter Template", platform: "Word Doc", desc: "Setting boundaries, identifying sponsors, and project constraints.", icon: "fa-file-signature" },
+        { title: "Corporate BRD Structure", platform: "Confluence / MD", desc: "Sanitized specification outline detailing business requirements.", icon: "fa-book" },
+        { title: "Functional Specs (FRD) Formats", platform: "Confluence", desc: "Specifies detailed data models, system validations, and APIs.", icon: "fa-file-invoice" },
+        { title: "Stakeholder Matrix Grid", platform: "Miro Template", desc: "Maps power/interest quadrants to plan requirement elicitation sessions.", icon: "fa-users" },
+        { title: "Gherkin CSV story templates", platform: "Jira Import CSV", desc: "CSV story file pre-mapped to Given-When-Then criteria.", icon: "fa-tasks" },
+        { title: "UAT Acceptance Test Workbook", platform: "Google Sheet", desc: "Test scenarios checklist to document user verification sign-offs.", icon: "fa-clipboard-check" }
+      ];
+
+      const tkContainer = document.getElementById('toolkit-grid');
+      if (tkContainer) {
+        tkContainer.innerHTML = templates.map(tmpl => `
+          <div class="card doc-card tilt-card" style="height: 190px; justify-content: space-between; display: flex; flex-direction: column;">
+            <div class="tilt-card-inner">
+              <span class="doc-type" style="color: var(--info); font-size: 0.8rem; font-weight: 700;"><i class="fas ${tmpl.icon}"></i> ${tmpl.platform}</span>
+              <h3 style="margin-top: 6px; font-size: 1.1rem; color: var(--text-primary);">${tmpl.title}</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-top: 4px;">
+                ${tmpl.desc}
+              </p>
+            </div>
+            <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 10px;">
+              <button class="btn btn-secondary" onclick="alert('Downloading standard ${tmpl.title} template...')" style="padding: 6px 12px; font-size: 0.8rem; width: 100%; justify-content: center; border-radius: 20px;">
+                <i class="fas fa-download"></i> Get Template
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 3. 3D Tilt Card Handler
+      const tiltCards = document.querySelectorAll('.tilt-card');
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = ((centerY - y) / centerY) * 8;
+          const rotateY = ((x - centerX) / centerX) * 8;
+          
+          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
+          
+          // Dynamic light reflection glare following cursor
+          const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+          const overlayColor = theme === 'light' ? 'rgba(0, 0, 0, 0.02)' : 'rgba(255, 255, 255, 0.05)';
+          card.style.background = `radial-gradient(circle at ${x}px ${y}px, ${overlayColor} 0%, rgba(255, 255, 255, 0) 75%), var(--card-bg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+          card.style.background = '';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
