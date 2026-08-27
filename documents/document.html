@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>!function(){var e=localStorage.getItem("portfolio-theme");if(e)document.documentElement.setAttribute("data-theme",e);else{document.documentElement.setAttribute("data-theme","dark");localStorage.setItem("portfolio-theme","dark")}}();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Document Specification | Karan Gattani</title>
+  <meta name="description" id="page-desc" content="Business Requirements and Functional Specification Document by Karan Gattani.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+      <span class="nav-brand-title">BA & Product Consultant</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="../index.html">Home</a></li>
+      <li class="nav-link-item"><a href="../projects.html">Solutions</a></li>
+      <li class="nav-link-item active"><a href="../documents.html">Resources</a></li>
+      <li class="nav-link-item"><a href="../resume.html">Resume</a></li>
+      <li class="nav-link-item"><a href="../blog.html">Blog</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="global-search" placeholder="Search...">
+      </div>
+      <div class="theme-toggle">
+        <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Nav -->
+  <header class="mobile-nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+    </div>
+    <button class="menu-toggle-btn" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Solutions</a>
+    <a href="../documents.html" class="active">Resources</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../blog.html">Blog</a>
+    <div class="theme-toggle" style="margin-top: auto; padding: 12px; background-color: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+      <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <main class="main-content">
+      <div class="container">
+        
+        <div style="margin-bottom: 24px;">
+          <a href="../documents.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-arrow-left"></i> Back to Resources Library</a>
+        </div>
+
+        <!-- Document Container -->
+        <article class="card" style="padding: 40px; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto;">
+          
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;" id="doc-badges">
+            <!-- Populated via JS -->
+          </div>
+
+          <h1 id="doc-title" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; color: var(--text-primary); line-height: 1.25;">
+            Document Specification Name
+          </h1>
+          <p id="doc-role" style="font-size: 1.05rem; color: var(--accent); font-weight: 600; margin-bottom: 24px;"></p>
+
+          <div style="background: var(--bg-primary); padding: 20px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 32px;">
+            <strong style="display: block; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Specification Overview</strong>
+            <p id="doc-description" style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin: 0;"></p>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 12px;">
+            <h3 style="font-size: 1.1rem; color: var(--text-primary); margin: 0;"><i class="fas fa-code" style="color: var(--primary);"></i> Raw Document Payload Preview</h3>
+            <button id="copy-spec-btn" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;"><i class="fas fa-copy"></i> Copy Specification</button>
+          </div>
+
+          <pre id="doc-preview" style="background: var(--bg-primary); border: 1px solid var(--border); padding: 24px; border-radius: 12px; font-family: monospace; font-size: 0.9rem; color: var(--text-primary); white-space: pre-wrap; word-break: break-word; max-height: 600px; overflow-y: auto; line-height: 1.6;">
+          </pre>
+
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <span>&copy; 2026 Karan Gattani. Business Analyst & Product Consultant.</span>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/karangattani/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/karangattani07" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:karangattani07@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/data-loader.js"></script>
+  <script src="../js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const docId = urlParams.get('id');
+
+      const docs = await DataLoader.getDocuments() || [];
+      const cleanId = (docId || '').trim().toLowerCase();
+      const doc = docs.find(d => d.id === docId) || docs.find(d => (d.id || '').trim().toLowerCase() === cleanId) || docs[0];
+
+      if (doc) {
+        document.title = `${doc.name} | Karan Gattani`;
+        document.getElementById('page-title').innerText = `${doc.name} | Karan Gattani`;
+        document.getElementById('page-desc').setAttribute('content', doc.description.slice(0, 160));
+
+        document.getElementById('doc-title').innerText = doc.name;
+        document.getElementById('doc-role').innerText = `Role: ${doc.role}`;
+        document.getElementById('doc-description').innerText = doc.description;
+        document.getElementById('doc-preview').innerText = doc.preview;
+
+        document.getElementById('doc-badges').innerHTML = `
+          <span class="badge badge-primary"><i class="fas fa-file-alt"></i> ${doc.type}</span>
+          <span class="badge badge-success"><i class="fas fa-building"></i> ${doc.industry}</span>
+        `;
+
+        document.getElementById('copy-spec-btn').addEventListener('click', () => {
+          navigator.clipboard.writeText(doc.preview).then(() => {
+            const btn = document.getElementById('copy-spec-btn');
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => {
+              btn.innerHTML = '<i class="fas fa-copy"></i> Copy Specification';
+            }, 2000);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
