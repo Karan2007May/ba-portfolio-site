@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>!function(){var e=localStorage.getItem("portfolio-theme");if(e)document.documentElement.setAttribute("data-theme",e);else{document.documentElement.setAttribute("data-theme","dark");localStorage.setItem("portfolio-theme","dark")}}();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Blog Article | Karan Gattani</title>
+  <meta name="description" id="page-desc" content="Business Analysis and Product Strategy Article by Karan Gattani.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+      <span class="nav-brand-title">BA & Product Consultant</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="../index.html">Home</a></li>
+      <li class="nav-link-item"><a href="../projects.html">Solutions</a></li>
+      <li class="nav-link-item"><a href="../documents.html">Resources</a></li>
+      <li class="nav-link-item"><a href="../resume.html">Resume</a></li>
+      <li class="nav-link-item active"><a href="../blog.html">Blog</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="global-search" placeholder="Search...">
+      </div>
+      <div class="theme-toggle">
+        <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Nav -->
+  <header class="mobile-nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+    </div>
+    <button class="menu-toggle-btn" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Solutions</a>
+    <a href="../documents.html">Resources</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <div class="theme-toggle" style="margin-top: auto; padding: 12px; background-color: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+      <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <main class="main-content">
+      <div class="container">
+        
+        <div style="margin-bottom: 24px;">
+          <a href="../blog.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-arrow-left"></i> Back to Blog Feed</a>
+        </div>
+
+        <!-- Article Container -->
+        <article class="card" style="padding: 40px; margin-bottom: 60px; max-width: 850px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+            <span class="badge badge-primary" id="post-category"><i class="fas fa-tag"></i> Process</span>
+            <time id="post-date" style="color: var(--accent); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">May 2026</time>
+          </div>
+
+          <h1 id="post-title" style="font-size: 2.4rem; font-weight: 800; margin-bottom: 20px; line-height: 1.25; color: var(--text-primary);">
+            Article Title
+          </h1>
+
+          <div id="post-summary-box" style="padding: 20px; background: var(--primary-glow); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; margin-bottom: 32px;">
+            <p id="post-summary" style="font-size: 1.1rem; color: var(--text-primary); font-weight: 600; line-height: 1.6; margin: 0;">
+              Summary text...
+            </p>
+          </div>
+
+          <div id="post-body" style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8;">
+            <!-- Rendered markdown content -->
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <span>&copy; 2026 Karan Gattani. Business Analyst & Product Consultant.</span>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/karangattani/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/karangattani07" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:karangattani07@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/data-loader.js"></script>
+  <script src="../js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get('id');
+
+      const posts = await DataLoader.getBlogPosts() || [];
+      const cleanId = (postId || '').trim().toLowerCase();
+      const post = posts.find(p => p.id === postId) || posts.find(p => (p.id || '').trim().toLowerCase() === cleanId) || posts[0];
+
+      if (post) {
+        document.title = `${post.title} | Karan Gattani`;
+        document.getElementById('page-title').innerText = `${post.title} | Karan Gattani`;
+        if (post.summary) {
+          document.getElementById('page-desc').setAttribute('content', post.summary.slice(0, 160));
+        }
+
+        document.getElementById('post-title').innerText = post.title;
+        document.getElementById('post-date').innerText = post.date;
+        document.getElementById('post-category').innerHTML = `<i class="fas fa-tag"></i> ${post.category || 'Insights'}`;
+        document.getElementById('post-summary').innerText = post.summary || post.excerpt || '';
+
+        const rawText = post.content || post.summary || 'Full content available soon.';
+        
+        let htmlContent = rawText
+          .replace(/### (.*)/g, '<h3 style="margin-top:28px; margin-bottom:12px; color:var(--text-primary); font-size:1.4rem; font-weight:700;">$1</h3>')
+          .replace(/## (.*)/g, '<h2 style="margin-top:32px; margin-bottom:16px; color:var(--text-primary); font-size:1.75rem; font-weight:800;">$1</h2>')
+          .replace(/\*\*([^*]+)\*\*/g, '<strong style="color:var(--text-primary);">$1</strong>')
+          .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+          .replace(/- (.*)/g, '<li style="margin-bottom:8px; list-style-type: disc;"><i class="fas fa-check" style="color: var(--primary); margin-right: 8px;"></i>$1</li>');
+
+        htmlContent = htmlContent.split('\n\n').map(p => {
+          if (p.includes('<li>')) return `<ul style="margin-left: 20px; margin-bottom: 24px; list-style: none;">${p.replace(/\n/g, '')}</ul>`;
+          return `<p style="margin-bottom: 20px;">${p}</p>`;
+        }).join('');
+
+        document.getElementById('post-body').innerHTML = htmlContent;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>!function(){var e=localStorage.getItem("portfolio-theme");if(e)document.documentElement.setAttribute("data-theme",e);else{document.documentElement.setAttribute("data-theme","dark");localStorage.setItem("portfolio-theme","dark")}}();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Bulletproof User Stories & Acceptance Criteria | Karan Gattani</title>
+  <meta name="description" content="A guide by Karan Gattani on how to write user stories and Gherkin acceptance criteria.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+      <span class="nav-brand-title">BA & Product Consultant</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="../index.html">Home</a></li>
+      <li class="nav-link-item"><a href="../projects.html">Solutions</a></li>
+      <li class="nav-link-item"><a href="../documents.html">Resources</a></li>
+      <li class="nav-link-item"><a href="../resume.html">Resume</a></li>
+      <li class="nav-link-item active"><a href="../blog.html">Blog</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="global-search" placeholder="Search...">
+      </div>
+      <div class="theme-toggle">
+        <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Nav -->
+  <header class="mobile-nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+    </div>
+    <button class="menu-toggle-btn" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Solutions</a>
+    <a href="../documents.html">Resources</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <div class="theme-toggle" style="margin-top: auto; padding: 12px; background-color: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+      <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <main class="main-content">
+      
+      <div class="container">
+        <div style="margin-bottom: 24px;">
+          <a href="../blog.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-arrow-left"></i> Back to Blog Feed</a>
+        </div>
+
+      <!-- Article Section -->
+      <article class="card" style="padding: 40px; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+        <span class="badge badge-primary"><i class="far fa-calendar-alt"></i> April 08, 2026</span>
+        <h1 style="font-size: 2.2rem; margin-top: 12px; margin-bottom: 24px; line-height: 1.2;">Writing Bulletproof User Stories & Acceptance Criteria</h1>
+        
+        <p>Vague user stories lead to developers building features that fail business expectations. A story like "As a user, I want a search bar so I can find items" leaves too much room for assumptions.</p>
+        
+        <p>To write actionable user stories, combine a clear user intent statement with Gherkin-style <strong>Given-When-Then</strong> Acceptance Criteria:</p>
+        
+        <h3 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 12px; color: var(--primary);">The User Story Formula</h3>
+        <ul style="margin-left: 20px; margin-bottom: 16px;">
+          <li><strong>As a:</strong> [Specific User Role]</li>
+          <li><strong>I want to:</strong> [Perform a clear system action]</li>
+          <li><strong>So that:</strong> [Achieve a business outcome]</li>
+        </ul>
+
+        <h3 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 12px; color: var(--primary);">The Gherkin Acceptance Criteria Format</h3>
+        <ul style="margin-left: 20px; margin-bottom: 16px;">
+          <li><strong>Given:</strong> [An initial state or configuration]</li>
+          <li><strong>When:</strong> [An event or user action occurs]</li>
+          <li><strong>Then:</strong> [The expected system outcome happens]</li>
+        </ul>
+
+        <h3 style="font-size: 1.3rem; margin-top: 24px; margin-bottom: 12px; color: var(--primary);">Real-World Example</h3>
+        <p><strong>Story:</strong> As a Customer Service Agent, I want to filter unresolved tickets by SLA remaining time, so that I can handle high-priority escalations first.</p>
+        <p><strong>Scenario: Filtering by critical SLA</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 16px;">
+          <li><strong>Given</strong> an agent is on the active tickets queue page,</li>
+          <li><strong>When</strong> they click the 'Urgent SLAs' toggle,</li>
+          <li><strong>Then</strong> the ticket list must refresh showing only tickets with &lt; 2 hours remaining on SLA, sorted from least time remaining to most.</li>
+        </ul>
+
+        <p style="margin-top: 24px;">Using this structured approach ensures QA testers can write automated test cases directly, and developers know exactly when their code is 'Done'.</p>
+      </article>
+
+      <!-- Footer -->
+      <footer style="border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: var(--text-muted); font-size: 0.9rem;">
+        <div>
+          Â© 2026 Karan Gattani. Dedicated BA & Product Consultant.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/karangattani/" target="_blank" class="hover:text-white"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/karangattani07" target="_blank" class="hover:text-white"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:karangattani07@gmail.com" class="hover:text-white"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="../js/data-loader.js"></script>
+  <script src="../js/shared.js"></script>
+</body>
+</html>
+

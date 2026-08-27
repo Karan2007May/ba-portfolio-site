@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>!function(){var e=localStorage.getItem("portfolio-theme");if(e)document.documentElement.setAttribute("data-theme",e);else{document.documentElement.setAttribute("data-theme","dark");localStorage.setItem("portfolio-theme","dark")}}();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Practical Difference: BRD vs. FRD | Karan Gattani</title>
+  <meta name="description" content="A guide by Karan Gattani on understanding the structural differences between BRD and FRD.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+      <span class="nav-brand-title">BA & Product Consultant</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="../index.html">Home</a></li>
+      <li class="nav-link-item"><a href="../projects.html">Solutions</a></li>
+      <li class="nav-link-item"><a href="../documents.html">Resources</a></li>
+      <li class="nav-link-item"><a href="../resume.html">Resume</a></li>
+      <li class="nav-link-item active"><a href="../blog.html">Blog</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="global-search" placeholder="Search...">
+      </div>
+      <div class="theme-toggle">
+        <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Nav -->
+  <header class="mobile-nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Karan Gattani</span>
+    </div>
+    <button class="menu-toggle-btn" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Solutions</a>
+    <a href="../documents.html">Resources</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <div class="theme-toggle" style="margin-top: auto; padding: 12px; background-color: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+      <span class="theme-toggle-label"><i class="fas fa-moon"></i> Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <main class="main-content">
+      
+      <div class="container">
+        <div style="margin-bottom: 24px;">
+          <a href="../blog.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-arrow-left"></i> Back to Blog Feed</a>
+        </div>
+
+      <!-- Article Section -->
+      <article class="card" style="padding: 40px; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+        <span class="badge badge-primary"><i class="far fa-calendar-alt"></i> June 14, 2026</span>
+        <h1 style="font-size: 2.5rem; margin-top: 12px; margin-bottom: 24px; line-height: 1.2;">The Practical Difference: BRD vs. FRD</h1>
+        
+        <p>In my role as a Business Analyst, the most common document point of confusion I see is the distinction between a Business Requirements Document (BRD) and a Functional Requirements Document (FRD). Many teams treat them as interchangeable, resulting in developers getting bog-down in business goals, or business clients getting lost in technical API specifications.</p>
+        
+        <p>Here is the simple, practical breakdown:</p>
+        
+        <h3 style="font-size: 1.4rem; margin-top: 24px; margin-bottom: 12px; color: var(--primary);">1. The Business Requirements Document (BRD)</h3>
+        <ul style="margin-left: 20px; margin-bottom: 16px;">
+          <li><strong>Target Audience:</strong> Project Sponsors, Business VPs, Product Managers.</li>
+          <li><strong>Key Question:</strong> <em>What</em> is the business problem, and <em>why</em> are we building a solution?</li>
+          <li><strong>Core Elements:</strong> Business goals, success metrics, scope boundaries, user personas, and high-level business rules.</li>
+          <li><strong>Example:</strong> "The procurement system must route all purchases over $5,000 to the Division Vice President for cost control compliance."</li>
+        </ul>
+
+        <h3 style="font-size: 1.4rem; margin-top: 24px; margin-bottom: 12px; color: var(--primary);">2. The Functional Requirements Document (FRD)</h3>
+        <ul style="margin-left: 20px; margin-bottom: 16px;">
+          <li><strong>Target Audience:</strong> Engineering Leads, QA Testers, System Architects.</li>
+          <li><strong>Key Question:</strong> <em>How</em> will the system behave to solve that business problem?</li>
+          <li><strong>Core Elements:</strong> System actions, data validation formulas, state transitions, database constraints, and API contracts.</li>
+          <li><strong>Example:</strong> "When a purchase order's 'total_cost' field exceeds 5000.00, the system must query the Staff Directory DB for the active VP of the associated 'department_id', set the 'pending_approver_id' to that VP's ID, and trigger a mobile push notification."</li>
+        </ul>
+
+        <p style="margin-top: 24px;">By cleanly separating the <em>Why/What</em> (BRD) from the <em>How</em> (FRD), you ensure that business clients can easily review and sign off on target outcomes, while engineering squads get clear, actionable rules they can build immediately.</p>
+      </article>
+
+      <!-- Footer -->
+      <footer style="border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: var(--text-muted); font-size: 0.9rem;">
+        <div>
+          Â© 2026 Karan Gattani. Dedicated BA & Product Consultant.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/karangattani/" target="_blank" class="hover:text-white"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/karangattani07" target="_blank" class="hover:text-white"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:karangattani07@gmail.com" class="hover:text-white"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="../js/data-loader.js"></script>
+  <script src="../js/shared.js"></script>
+</body>
+</html>
+
